@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8002
 
 # Defines the Eureka server that is used by the Netflix OSS components to use as the registry
 # for server discovery
@@ -12,15 +12,3 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
----
-
-spring:
-  profiles: docker
-eureka:
-  instance:
-    hostname: eurekaregistry
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
